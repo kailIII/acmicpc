@@ -1,0 +1,43 @@
+% Generator: GNU source-highlight, by Lorenzo Bettini, http://www.gnu.org/software/src-highlite
+{\ttfamily \raggedright {
+\noindent
+\mbox{}\textit{\textcolor{Brown}{//Mandar\ como\ Parametro\ N\ el\ numero\ de\ bits}} \\
+\mbox{}\textbf{\textcolor{RoyalBlue}{import}}\ java\textcolor{BrickRed}{.}math\textcolor{BrickRed}{.}BigInteger\textcolor{BrickRed}{;} \\
+\mbox{}\textbf{\textcolor{RoyalBlue}{import}}\ java\textcolor{BrickRed}{.}util\textcolor{BrickRed}{.}Random\textcolor{BrickRed}{;} \\
+\mbox{}\textbf{\textcolor{Blue}{class}}\ \textcolor{TealBlue}{Karatsuba}\ \textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{private}}\ \textbf{\textcolor{Blue}{final}}\ \textbf{\textcolor{Blue}{static}}\ \textcolor{TealBlue}{BigInteger}\ ZERO\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Blue}{new}}\ \textbf{\textcolor{Black}{BigInteger}}\textcolor{BrickRed}{(}\texttt{\textcolor{Red}{"{}0"{}}}\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{public}}\ \textbf{\textcolor{Blue}{static}}\ \textcolor{TealBlue}{BigInteger}\ \textbf{\textcolor{Black}{karatsuba}}\textcolor{BrickRed}{(}\textcolor{TealBlue}{BigInteger}\ x\textcolor{BrickRed}{,}\ \textcolor{TealBlue}{BigInteger}\ y\textcolor{BrickRed}{)}\ \textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \ \ \ \ \\
+\mbox{}\ \ \ \ \ \ \ \ \textcolor{ForestGreen}{int}\ N\ \textcolor{BrickRed}{=}\ Math\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{max}}\textcolor{BrickRed}{(}x\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{bitLength}}\textcolor{BrickRed}{(),}\ y\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{bitLength}}\textcolor{BrickRed}{());} \\
+\mbox{}\ \ \ \ \ \ \ \ \textbf{\textcolor{Blue}{if}}\ \textcolor{BrickRed}{(}N\ \textcolor{BrickRed}{$<$=}\ \textcolor{Purple}{2000}\textcolor{BrickRed}{)}\ \textbf{\textcolor{Blue}{return}}\ x\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{multiply}}\textcolor{BrickRed}{(}y\textcolor{BrickRed}{);}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \\
+\mbox{}\ \ \ \ \ \ \ \ \\
+\mbox{}\ \ \ \ \ \ \ \ N\ \textcolor{BrickRed}{=}\ \textcolor{BrickRed}{(}N\ \textcolor{BrickRed}{/}\ \textcolor{Purple}{2}\textcolor{BrickRed}{)}\ \textcolor{BrickRed}{+}\ \textcolor{BrickRed}{(}N\ \textcolor{BrickRed}{\%}\ \textcolor{Purple}{2}\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \ \ \ \ \\
+\mbox{}\ \ \ \ \ \ \ \ \textcolor{TealBlue}{BigInteger}\ b\ \textcolor{BrickRed}{=}\ x\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{shiftRight}}\textcolor{BrickRed}{(}N\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \ \ \ \ \textcolor{TealBlue}{BigInteger}\ a\ \textcolor{BrickRed}{=}\ x\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{subtract}}\textcolor{BrickRed}{(}b\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{shiftLeft}}\textcolor{BrickRed}{(}N\textcolor{BrickRed}{));} \\
+\mbox{}\ \ \ \ \ \ \ \ \textcolor{TealBlue}{BigInteger}\ d\ \textcolor{BrickRed}{=}\ y\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{shiftRight}}\textcolor{BrickRed}{(}N\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \ \ \ \ \textcolor{TealBlue}{BigInteger}\ c\ \textcolor{BrickRed}{=}\ y\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{subtract}}\textcolor{BrickRed}{(}d\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{shiftLeft}}\textcolor{BrickRed}{(}N\textcolor{BrickRed}{));} \\
+\mbox{}\ \ \ \ \ \ \ \ \\
+\mbox{}\ \ \ \ \ \ \ \ \textcolor{TealBlue}{BigInteger}\ ac\ \ \ \ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Black}{karatsuba}}\textcolor{BrickRed}{(}a\textcolor{BrickRed}{,}\ c\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \ \ \ \ \textcolor{TealBlue}{BigInteger}\ bd\ \ \ \ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Black}{karatsuba}}\textcolor{BrickRed}{(}b\textcolor{BrickRed}{,}\ d\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \ \ \ \ \textcolor{TealBlue}{BigInteger}\ abcd\ \ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Black}{karatsuba}}\textcolor{BrickRed}{(}a\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{add}}\textcolor{BrickRed}{(}b\textcolor{BrickRed}{),}\ c\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{add}}\textcolor{BrickRed}{(}d\textcolor{BrickRed}{));} \\
+\mbox{}\ \ \ \ \ \ \ \ \textbf{\textcolor{Blue}{return}}\ ac\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{add}}\textcolor{BrickRed}{(}abcd\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{subtract}}\textcolor{BrickRed}{(}ac\textcolor{BrickRed}{).}\textbf{\textcolor{Black}{subtract}}\textcolor{BrickRed}{(}bd\textcolor{BrickRed}{).}\textbf{\textcolor{Black}{shiftLeft}}\textcolor{BrickRed}{(}N\textcolor{BrickRed}{)).}\textbf{\textcolor{Black}{add}}\textcolor{BrickRed}{(}bd\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{shiftLeft}}\textcolor{BrickRed}{(}\textcolor{Purple}{2}\textcolor{BrickRed}{*}N\textcolor{BrickRed}{));} \\
+\mbox{}\ \ \ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{public}}\ \textbf{\textcolor{Blue}{static}}\ \textcolor{ForestGreen}{void}\ \textbf{\textcolor{Black}{main}}\textcolor{BrickRed}{(}String\textcolor{BrickRed}{[]}\ args\textcolor{BrickRed}{)}\ \textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \ \ \ \ \textcolor{ForestGreen}{long}\ start\textcolor{BrickRed}{,}\ stop\textcolor{BrickRed}{,}\ elapsed\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \ \ \ \ \textcolor{TealBlue}{Random}\ random\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Blue}{new}}\ \textbf{\textcolor{Black}{Random}}\textcolor{BrickRed}{();} \\
+\mbox{}\ \ \ \ \ \ \ \ \textcolor{ForestGreen}{int}\ N\ \textcolor{BrickRed}{=}\ Integer\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{parseInt}}\textcolor{BrickRed}{(}args\textcolor{BrickRed}{[}\textcolor{Purple}{0}\textcolor{BrickRed}{]);} \\
+\mbox{}\ \ \ \ \ \ \ \ \textcolor{TealBlue}{BigInteger}\ a\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Blue}{new}}\ \textbf{\textcolor{Black}{BigInteger}}\textcolor{BrickRed}{(}N\textcolor{BrickRed}{,}\ random\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \ \ \ \ \textcolor{TealBlue}{BigInteger}\ b\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Blue}{new}}\ \textbf{\textcolor{Black}{BigInteger}}\textcolor{BrickRed}{(}N\textcolor{BrickRed}{,}\ random\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \ \ \ \ start\ \textcolor{BrickRed}{=}\ System\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{currentTimeMillis}}\textcolor{BrickRed}{();}\  \\
+\mbox{}\ \ \ \ \ \ \ \ \textcolor{TealBlue}{BigInteger}\ c\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Black}{karatsuba}}\textcolor{BrickRed}{(}a\textcolor{BrickRed}{,}\ b\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \ \ \ \ stop\ \textcolor{BrickRed}{=}\ System\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{currentTimeMillis}}\textcolor{BrickRed}{();} \\
+\mbox{}\ \ \ \ \ \ \ \ System\textcolor{BrickRed}{.}out\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{println}}\textcolor{BrickRed}{(}stop\ \textcolor{BrickRed}{-}\ start\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \ \ \ \ start\ \textcolor{BrickRed}{=}\ System\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{currentTimeMillis}}\textcolor{BrickRed}{();}\  \\
+\mbox{}\ \ \ \ \ \ \ \ \textcolor{TealBlue}{BigInteger}\ d\ \textcolor{BrickRed}{=}\ a\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{multiply}}\textcolor{BrickRed}{(}b\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \ \ \ \ stop\ \textcolor{BrickRed}{=}\ System\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{currentTimeMillis}}\textcolor{BrickRed}{();} \\
+\mbox{}\ \ \ \ \ \ \ \ System\textcolor{BrickRed}{.}out\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{println}}\textcolor{BrickRed}{(}stop\ \textcolor{BrickRed}{-}\ start\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \ \ \ \ System\textcolor{BrickRed}{.}out\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{println}}\textcolor{BrickRed}{((}c\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{equals}}\textcolor{BrickRed}{(}d\textcolor{BrickRed}{)));} \\
+\mbox{}\ \ \ \ \textcolor{Red}{\}} \\
+\mbox{}\textcolor{Red}{\}}
+}

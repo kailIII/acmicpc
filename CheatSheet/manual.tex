@@ -1,0 +1,153 @@
+%------------------------------------------------------------------------------%
+%
+%
+%
+%------------------------------------------------------------------------------%
+\documentclass[10pt,letterpaper]{article}
+
+%---------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{listings}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{amsmath}
+\usepackage{verbatim}
+% \usepackage[colorlinks]{hyperref}
+\usepackage{longtable}
+%\usepackage{color}
+%---------------------------------------------------------------
+
+\setlength{\topmargin}{-1.0in}
+\setlength{\textheight}{9.5in} 
+\setlength{\evensidemargin}{0.0in}
+\setlength{\oddsidemargin}{0.0in}
+\setlength{\textwidth}{6.5in} 
+
+\begin{document}
+
+%---------------------------------------------------------------
+\title{ACM ICPC Bolivia CheatSheet}
+\author{}
+\date{}
+\maketitle
+\newpage
+%---------------------------------------------------------------
+
+%---------------------------------------------------------------
+\tableofcontents
+%\lstlistoflistings
+\lstloadlanguages{C++}
+%---------------------------------------------------------------
+%---------------------------------------------------------------
+%\section{Teoría de números}
+\section{Matem\'atica}
+%---------------------------------------------------------------
+
+\subsection{Karatsuba}
+\input{./src/number_theory/karatsuba}%.tex
+
+\subsection{Integraci\'on por Simpson}
+$$
+\int_a^b f(x) dx
+$$
+\input{./src/number_theory/simpson_integrating}%.tex
+
+\subsection{Phi de Euler}
+\input{./src/number_theory/euler_function}%.tex
+
+\subsection{Modulo en Factorial}
+\input{./src/number_theory/modular_factorial}%.tex
+
+\subsection{Exponenciaci\'on Binaria}
+\input{./src/number_theory/binary_pow}%.tex
+
+\section{Grafos}
+\subsection{Ordenamiento Topologico}
+\input{./src/grafos/topological}%.tex
+
+\subsection{Componentes fuertemente conectados}
+\input{./src/grafos/scc}%.tex
+
+\subsection{K camino mas corto}
+\input{./src/grafos/kth_path}%.tex
+
+\subsection{Algoritmo de Dijkstra}
+El peso de todas las aristas debe ser no negativo.
+\\
+\input{./src/grafos/dijkstra}%.tex
+
+\subsection{Minimum spanning tree: Algoritmo de Kruskal + Union-Find}
+\input{./src/grafos/kruskal}%.tex
+
+\subsection{Algoritmo de Floyd-Warshall}
+\emph{Complejidad:} $ O(n^3) $ \\
+Se asume que no hay ciclos de costo negativo.
+\input{./src/grafos/floyd}%.tex
+
+\subsection{Algoritmo de Bellman-Ford}
+Si no hay ciclos de coste negativo, encuentra la distancia más corta entre un nodo
+y todos los demás. Si sí hay, permite saberlo. \\
+El coste de las aristas \underline{sí} puede ser negativo.
+\input{./src/grafos/bellman}%.tex
+
+\subsection{Puntos de articulación}
+\input{./src/grafos/puntos_articulacion}%.tex
+
+\subsection{Máximo flujo: Método de Ford-Fulkerson, algoritmo de Edmonds-Karp}
+\medskip
+El algoritmo de Edmonds-Karp es una modificación al método de Ford-Fulkerson. Este último
+utiliza DFS para hallar un camino de aumentación, pero la sugerencia de Edmonds-Karp
+es utilizar BFS que lo hace más eficiente en algunos grafos.
+\input{./src/grafos/ford_fulkerson}%.tex
+
+\section{Programación dinámica}
+\subsection{Longest common subsequence}
+\input{./src/dp/lcs}%.tex
+
+\subsection{M\'axima Submatriz de ceros}
+\input{./src/dp/maximum_zero_submatrix}%.tex
+
+\section{Geometría}
+\subsection{Área de un polígono}
+Si P es un polígono simple (no se intersecta a sí mismo) su área está dada por: \\
+
+$ A(P) = \frac{1}{2} \displaystyle\sum_{i=0}^{n-1} (x_{i} \cdot y_{i+1} - x_{i+1} \cdot y_{i}) $ \\
+\bigskip
+\input{./src/geometria/polygon_area}%.tex
+
+\subsection{Centro de masa de un polígono}
+Si P es un polígono simple (no se intersecta a sí mismo) su centro de masa está dado por: \\
+
+$ \displaystyle\bar{C}_{x} = \frac{ \displaystyle\iint_{R} x \, dA }{M} = \frac{1}{6M}\sum_{i=1}^{n} (y_{i+1} - y_{i}) (x_{i+1}^2 + x_{i+1} \cdot x_{i} + x_{i}^2) $
+
+\medskip
+
+$\displaystyle\bar{C}_{y} = \frac{ \displaystyle\iint_{R} y \, dA }{M} = \frac{1}{6M} \sum_{i=1}^{n} (x_{i} - x_{i+1}) (y_{i+1}^2 + y_{i+1} \cdot y_{i} + y_{i}^2)$
+
+\medskip
+
+Donde $ M $ es el área del polígono. \\
+
+Otra posible fórmula equivalente:
+
+$ \displaystyle\bar{C}_{x} = \frac{1}{6A} \sum_{i=0}^{n-1} (x_{i} + x_{i+1}) (x_{i} \cdot y_{i+1} - x_{i+1} \cdot y_{i}) $
+
+\medskip
+
+$ \displaystyle\bar{C}_{y} = \frac{1}{6A} \sum_{i=0}^{n-1} (y_{i} + y_{i+1}) (x_{i} \cdot y_{i+1} - x_{i+1} \cdot y_{i}) $
+
+
+\subsection{Convex hull: Graham Scan}
+\emph{Complejidad:} $ O(n \log_{2}{n}) $
+\input{./src/geometria/grahamscan}%.tex
+
+\subsection{Mínima distancia entre un punto y un segmento}
+\input{./src/geometria/distance_point_to_segment}%.tex
+
+\subsection{Mínima distancia entre un punto y una recta}
+\input{./src/geometria/distance_point_to_line}%.tex
+
+\subsection{Determinar si un polígono es convexo}
+\input{./src/geometria/is_convex_polygon}%.tex
+
+\end{document}
