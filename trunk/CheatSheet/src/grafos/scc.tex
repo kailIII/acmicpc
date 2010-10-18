@@ -1,0 +1,50 @@
+{\ttfamily \raggedright {
+% Generator: GNU source-highlight, by Lorenzo Bettini, http://www.gnu.org/software/src-highlite
+\noindent
+\mbox{}vector\ \textcolor{BrickRed}{$<$}\ \textcolor{TealBlue}{vector$<$int$>$\ $>$}\ g\textcolor{BrickRed}{,}\ gr\textcolor{BrickRed}{;} \\
+\mbox{}\textcolor{TealBlue}{vector$<$char$>$}\ used\textcolor{BrickRed}{;} \\
+\mbox{}\textcolor{TealBlue}{vector$<$int$>$}\ order\textcolor{BrickRed}{,}\ component\textcolor{BrickRed}{;} \\
+\mbox{}\  \\
+\mbox{}\textcolor{ForestGreen}{void}\ \textbf{\textcolor{Black}{dfs1}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ v\textcolor{BrickRed}{)}\ \textcolor{Red}{\{} \\
+\mbox{}\ \ used\textcolor{BrickRed}{[}v\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Blue}{true}}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{for}}\textcolor{BrickRed}{(}\textcolor{TealBlue}{size$\_$t}\ i\textcolor{BrickRed}{=}\textcolor{Purple}{0}\textcolor{BrickRed}{;}\ i\textcolor{BrickRed}{$<$}g\textcolor{BrickRed}{[}v\textcolor{BrickRed}{].}\textbf{\textcolor{Black}{size}}\textcolor{BrickRed}{();}\ \textcolor{BrickRed}{++}i\textcolor{BrickRed}{)} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{if}}\textcolor{BrickRed}{(!}used\textcolor{BrickRed}{[}\ g\textcolor{BrickRed}{[}v\textcolor{BrickRed}{][}i\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{])} \\
+\mbox{}\ \ \ \ \ \ \textbf{\textcolor{Black}{dfs1}}\textcolor{BrickRed}{(}g\textcolor{BrickRed}{[}v\textcolor{BrickRed}{][}i\textcolor{BrickRed}{]);} \\
+\mbox{}\ \ order\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{push$\_$back}}\textcolor{BrickRed}{(}v\textcolor{BrickRed}{);} \\
+\mbox{}\textcolor{Red}{\}} \\
+\mbox{}\  \\
+\mbox{}\textcolor{ForestGreen}{void}\ \textbf{\textcolor{Black}{dfs2}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ v\textcolor{BrickRed}{)}\textcolor{Red}{\{} \\
+\mbox{}\ \ used\textcolor{BrickRed}{[}v\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{=}\ \textbf{\textcolor{Blue}{true}}\textcolor{BrickRed}{;} \\
+\mbox{}\ \ component\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{push$\_$back}}\ \textcolor{BrickRed}{(}v\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{for}}\textcolor{BrickRed}{(}\textcolor{TealBlue}{size$\_$t}\ i\textcolor{BrickRed}{=}\textcolor{Purple}{0}\textcolor{BrickRed}{;}\ i\textcolor{BrickRed}{$<$}gr\textcolor{BrickRed}{[}v\textcolor{BrickRed}{].}\textbf{\textcolor{Black}{size}}\textcolor{BrickRed}{();}\ \textcolor{BrickRed}{++}i\textcolor{BrickRed}{)} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{if}}\textcolor{BrickRed}{(!}used\textcolor{BrickRed}{[}\ gr\textcolor{BrickRed}{[}v\textcolor{BrickRed}{][}i\textcolor{BrickRed}{]}\ \textcolor{BrickRed}{])} \\
+\mbox{}\ \ \ \ \ \ \textbf{\textcolor{Black}{dfs2}}\textcolor{BrickRed}{(}gr\textcolor{BrickRed}{[}v\textcolor{BrickRed}{][}i\textcolor{BrickRed}{]);} \\
+\mbox{}\textcolor{Red}{\}} \\
+\mbox{}\  \\
+\mbox{}\textcolor{ForestGreen}{int}\ \textbf{\textcolor{Black}{main}}\textcolor{BrickRed}{()}\ \textcolor{Red}{\{} \\
+\mbox{}\ \ \textcolor{ForestGreen}{int}\ n\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \textit{\textcolor{Brown}{//...\ read\ n\ ...}} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{for}}\textcolor{BrickRed}{(;;)}\ \textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \textcolor{ForestGreen}{int}\ a\textcolor{BrickRed}{,}\ b\textcolor{BrickRed}{;} \\
+\mbox{}\ \ \ \ \textit{\textcolor{Brown}{//...\ read\ directed\ edge\ (a,b)\ ...}} \\
+\mbox{}\ \ \ \ g\textcolor{BrickRed}{[}a\textcolor{BrickRed}{].}\textbf{\textcolor{Black}{push$\_$back}}\textcolor{BrickRed}{(}b\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ gr\textcolor{BrickRed}{[}b\textcolor{BrickRed}{].}\textbf{\textcolor{Black}{push$\_$back}}\textcolor{BrickRed}{(}a\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \textcolor{Red}{\}} \\
+\mbox{}\  \\
+\mbox{}\ \ used\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{assign}}\textcolor{BrickRed}{(}n\textcolor{BrickRed}{,}\ \textbf{\textcolor{Blue}{false}}\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{for}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ i\textcolor{BrickRed}{=}\textcolor{Purple}{0}\textcolor{BrickRed}{;}\ i\textcolor{BrickRed}{$<$}n\textcolor{BrickRed}{;}\ \textcolor{BrickRed}{++}i\textcolor{BrickRed}{)} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{if}}\textcolor{BrickRed}{(!}used\textcolor{BrickRed}{[}i\textcolor{BrickRed}{])} \\
+\mbox{}\ \ \ \ \ \ \textbf{\textcolor{Black}{dfs1}}\textcolor{BrickRed}{(}i\textcolor{BrickRed}{);} \\
+\mbox{}\ \ used\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{assign}}\textcolor{BrickRed}{(}n\textcolor{BrickRed}{,}\ \textbf{\textcolor{Blue}{false}}\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \textbf{\textcolor{Blue}{for}}\textcolor{BrickRed}{(}\textcolor{ForestGreen}{int}\ i\textcolor{BrickRed}{=}\textcolor{Purple}{0}\textcolor{BrickRed}{;}\ i\textcolor{BrickRed}{$<$}n\textcolor{BrickRed}{;}\ \textcolor{BrickRed}{++}i\textcolor{BrickRed}{)}\ \textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \textcolor{ForestGreen}{int}\ v\ \textcolor{BrickRed}{=}\ order\textcolor{BrickRed}{[}n\textcolor{BrickRed}{-}\textcolor{Purple}{1}\textcolor{BrickRed}{-}i\textcolor{BrickRed}{];} \\
+\mbox{}\ \ \ \ \textbf{\textcolor{Blue}{if}}\textcolor{BrickRed}{(!}used\textcolor{BrickRed}{[}v\textcolor{BrickRed}{])}\ \textcolor{Red}{\{} \\
+\mbox{}\ \ \ \ \ \ \textbf{\textcolor{Black}{dfs2}}\textcolor{BrickRed}{(}v\textcolor{BrickRed}{);} \\
+\mbox{}\ \ \ \ \ \ \textit{\textcolor{Brown}{//...\ work\ with\ component\ ...}} \\
+\mbox{}\ \ \ \ \ \ component\textcolor{BrickRed}{.}\textbf{\textcolor{Black}{clear}}\textcolor{BrickRed}{();} \\
+\mbox{}\ \ \ \ \textcolor{Red}{\}} \\
+\mbox{}\ \ \textcolor{Red}{\}} \\
+\mbox{}\textcolor{Red}{\}} \\
+\mbox{} \\
+\mbox{}
+} \normalfont\normalsize
